@@ -21,7 +21,4 @@ angular.module('starter.services', [])
       return null;
     }
   };
-})
-.factory('Settings', function() {
-  var settings = {lol: "yes"};
 });

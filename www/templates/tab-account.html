@@ -1,9 +1,23 @@
 <ion-view view-title="Account">
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+    <form ng-submit="saveMySettings(mySettings)">
+      <label class="item item-input">
+        Name:
+        <input type="text" ng-model="mySettings.name">
+      </label>
+      <label class="item item-input">
+        Message:
+        <input type="text" ng-model="mySettings.message">
+      </label>
+      <label class="item item-input">
+        Email To:
+        <input type="text" ng-model="mySettings.emailTo">
+      </label>
+      <label class="item item-input">
+        Call To:
+        <input type="text" ng-model="mySettings.callTo">
+      </label>
+      <button type="submit" class="button button-block button-positive">Save Settings</button>
+    </form>
   </ion-content>
 </ion-view>
