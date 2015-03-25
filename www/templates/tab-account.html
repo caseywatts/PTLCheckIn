@@ -24,5 +24,11 @@
     <a ng-href="mailto:{{mySettings.emailTo}}?body={{mySettings.message}}" class="button button-balanced icon ion-email icon-right">
       Email
     </a>
+    <a ng-href="sms:{{mySettings.callTo}}?body={{mySettings.message}}" class="button button-balanced icon ion-android-textsms icon-right">
+      Text
+    </a>
+    <a ng-href="{{mySettings.callTo}}" class="button button-balanced icon ion-ios-telephone icon-right">
+      Phone
+    </a>
   </ion-content>
 </ion-view>
