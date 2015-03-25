@@ -16,7 +16,7 @@ angular.module('starter.controllers', [])
 .controller('AccountCtrl', function($scope) {
   $scope.mySettings = {
     name: 'Casey Watts',
-    message: 'I am safe',
+    message: 'lol',
     emailTo: 'derek.gildea+caseysafe@gmail.com',
     callTo: '123-456-7890'
   };
