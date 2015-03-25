@@ -21,5 +21,8 @@
         <button type="submit" class="button button-block button-positive">Save Settings</button>
       </div>
     </form>
+    <a ng-href="mailto:{{mySettings.emailTo}}?body={{mySettings.message}}" class="button button-balanced icon ion-email icon-right">
+      Email
+    </a>
   </ion-content>
 </ion-view>
