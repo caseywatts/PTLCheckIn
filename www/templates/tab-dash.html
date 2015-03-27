@@ -1,13 +1,18 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <a ng-href="mailto:{{mySettings.emailTo}}?body={{mySettings.message}}" class="button button-balanced icon ion-email icon-right">
-      Email
+  <div class="list">
+    <a ng-href="mailto:{{mySettings.emailTo}}?body={{mySettings.message}}" class="item item-icon-left">
+      <i class="icon ion-email"></i>
+      Email Status Update
     </a>
-    <a ng-href="sms:{{mySettings.callTo}}?body={{mySettings.message}}" class="button button-balanced icon ion-android-textsms icon-right">
-      Text
+    <a ng-href="sms:{{mySettings.callTo}}?body={{mySettings.message}}" class="item item-icon-left">
+      <i class="icon ion-android-textsms "></i>
+      Text Status Update
     </a>
-    <a ng-href="tel:{{mySettings.callTo}}" class="button button-balanced icon ion-ios-telephone icon-right">
-      Phone
+    <a ng-href="tel:{{mySettings.callTo}}" class="item item-icon-left">
+      <i class="icon ion-ios-telephone"></i>
+      Phone Status Update
     </a>
+  </div>
   </ion-content>
 </ion-view>
