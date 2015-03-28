@@ -1,23 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, MySettings) {
+  $scope.mySettings = MySettings.all;
+})
 
-// .controller('ChatsCtrl', function($scope, Chats) {
-//   $scope.chats = Chats.all();
-//   $scope.remove = function(chat) {
-//     Chats.remove(chat);
-//   }
-// })
-//
-// .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-//   $scope.chat = Chats.get($stateParams.chatId);
-// })
-
-.controller('AccountCtrl', function($scope) {
-  $scope.mySettings = {
-    name: 'Casey Watts',
-    message: 'lol',
-    emailTo: 'derek.gildea+caseysafe@gmail.com',
-    callTo: '123-456-7890'
-  };
+.controller('AccountCtrl', function($scope, MySettings) {
+  $scope.mySettings = MySettings.all;
 });
