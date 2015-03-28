@@ -4,6 +4,6 @@ angular.module('starter.controllers', [])
   $scope.mySettings = MySettings.all;
 })
 
-.controller('AccountCtrl', function($scope, MySettings) {
+.controller('SettingsCtrl', function($scope, MySettings) {
   $scope.mySettings = MySettings.all;
 });
