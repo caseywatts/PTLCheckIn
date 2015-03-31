@@ -1,9 +1,9 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, MySettings) {
-  $scope.mySettings = MySettings.all;
+  $scope.mySettings = MySettings.getSettings();
 })
 
 .controller('AccountCtrl', function($scope, MySettings) {
-  $scope.mySettings = MySettings.all;
+  $scope.mySettings = MySettings.getSettings();
 });
