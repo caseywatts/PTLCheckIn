@@ -1,12 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, MySettings) {
-  $scope.mySettings = MySettings.getSettings();
+.controller('DashCtrl', function($scope, localStorageService, MySettings) {
+  localStorageService.bind($scope, 'mySettings');
 })
 
-.controller('AccountCtrl', function($scope, MySettings) {
-  $scope.mySettings = MySettings.getSettings();
-  $scope.saveMySettings = function(mySettings){
-    MySettings.setSettings(mySettings);
-  };
+.controller('AccountCtrl', function($scope, localStorageService, MySettings) {
+  localStorageService.bind($scope, 'mySettings');
 });

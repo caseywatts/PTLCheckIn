@@ -21,6 +21,11 @@ angular.module('starter', ['ionic', 'ionic.utils', 'LocalStorageModule', 'starte
   });
 })
 
+.config(function (localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setPrefix('PTLCheckIn');
+})
+
 .config(function($stateProvider, $urlRouterProvider, $compileProvider)  {
 
   // Ionic uses AngularUI Router which uses the concept of states
