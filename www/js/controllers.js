@@ -6,4 +6,7 @@ angular.module('starter.controllers', [])
 
 .controller('AccountCtrl', function($scope, MySettings) {
   $scope.mySettings = MySettings.getSettings();
+  $scope.saveMySettings = function(mySettings){
+    MySettings.setSettings(mySettings);
+  };
 });
