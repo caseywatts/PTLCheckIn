@@ -1,21 +1,21 @@
 <ion-view view-title="Account">
   <ion-content>
-    <form ng-submit="saveMySettings(mySettings)">
+    <form ng-submit="">
       <label class="item item-input">
         <span class="input-label">Name</span>
-        <input type="text" ng-model="mySettings.name">
+        <input type="text" ng-model="$storage.name">
       </label>
       <label class="item item-input">
         <span class="input-label">Message</span>
-        <input type="text" ng-model="mySettings.message">
+        <input type="text" ng-model="$storage.message">
       </label>
       <label class="item item-input">
         <span class="input-label">Email To</span>
-        <input type="text" ng-model="mySettings.emailTo">
+        <input type="text" ng-model="$storage.emailTo">
       </label>
       <label class="item item-input">
         <span class="input-label">Call To</span>
-        <input type="tel" ng-model="mySettings.callTo">
+        <input type="tel" ng-model="$storage.callTo">
       </label>
       <div class="padding">
         <button type="submit" class="button button-block button-positive">Save Settings</button>
