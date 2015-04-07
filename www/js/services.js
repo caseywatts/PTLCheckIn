@@ -17,7 +17,7 @@ angular.module('ionic.utils', [])
 }]);
 
 angular.module('starter.services', [])
-.service('MySettings', ['localStorageService', function(localStorageService) {
+.service('MySettings', ['$localstorage', function($localstorage) {
   var mySettings;
   var defaultSettings = {
       name: 'Casey Watts',
@@ -26,9 +26,9 @@ angular.module('starter.services', [])
       callTo: '123-456-7890'
   };
   this.getSettings = function() {
-    return localStorageService.get('mySettings');
+    return $localstorage.getObject('mySettings', defaultSettings);
   };
   this.setSettings = function(mySettings) {
-    return localStorageService.set('mySettings', mySettings);
+    return $localstorage.setObject('mySettings', mySettings);
   };
 }]);
