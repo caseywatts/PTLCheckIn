@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $localStorage, CheckInMessages) {
   $scope.$storage = $localStorage;
-  if ($scope.$storage.message === null)
+  if ($scope.$storage.messages === undefined)
     {
       $scope.$storage.messages = CheckInMessages.all();
     }
