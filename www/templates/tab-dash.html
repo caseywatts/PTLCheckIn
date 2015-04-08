@@ -1,9 +1,15 @@
 <ion-view view-title="Dashboard">
 <ion-content class="padding">
-<a ng-href="tel:{{$storage.callTo}}" class="item item-icon-left">
-  <i class="icon ion-ios-telephone"></i>
-  Phone
-</a>
+<div class="button-bar">
+  <a ng-href="tel:{{$storage.callTo}}" class="button button-icon-left">
+    <i class="icon ion-ios-telephone"></i>
+    Phone
+  </a>
+  <a ng-click="newMessage()" class="button button-icon-left">
+    <i class="icon ion-plus"></i>
+    New
+  </a>
+</div>
 <div class="list card" ng-repeat="message in $storage.messages">
   <div class="item item-body" ng-hide="editing">
     {{message.message}}
