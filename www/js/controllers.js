@@ -9,6 +9,9 @@ angular.module('starter.controllers', [])
   $scope.newMessage = function() {
     $scope.$storage.messages.push({message: "[text]"});
   };
+  $scope.deleteMessage = function(index) {
+    $scope.$storage.messages.splice(index,1);
+  };
 })
 
 .controller('AccountCtrl', function($scope, $localStorage) {

@@ -34,6 +34,10 @@
     </a>
   </div>
   <div ng-show="editing" class="item tabs tabs-secondary tabs-icon-left">
+    <a ng-click="deleteMessage($index)" class="tab-item">
+      <i class="icon ion-trash-a"></i>
+      Delete
+    </a>
     <a ng-click="editing = false" class="tab-item">
       <i class="icon ion-checkmark"></i>
       Save
