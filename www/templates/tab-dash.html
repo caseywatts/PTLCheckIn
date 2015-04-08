@@ -14,5 +14,10 @@
       Phone Status Update
     </a>
   </div>
+  <div class="list">
+    <div ng-repeat="message in $storage.messages">
+      {{message.message}}
+    </div>
+  </div>
   </ion-content>
 </ion-view>

@@ -1,8 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $localStorage) {
+.controller('DashCtrl', function($scope, $localStorage, CheckInMessages) {
 //    $scope.mySettings = MySettings.getSettings();
   $scope.$storage = $localStorage;
+  $scope.$storage.messages = CheckInMessages.all();
 })
 
 .controller('AccountCtrl', function($scope, $localStorage) {
