@@ -20,25 +20,25 @@
     </label>
   </div>
   <div ng-hide="editing" class="item tabs tabs-secondary tabs-icon-left">
-    <a ng-href="mailto:{{$storage.emailTo}}?body={{message.message}}" class="tab-item">
+    <a ng-href="mailto:{{$storage.emailTo}}?body={{message.message}}" class="tab-item positive">
       <i class="icon ion-email"></i>
       Email
     </a>
-    <a ng-href="sms:{{$storage.textTo}}?body={{message.message}}" class="tab-item">
+    <a ng-href="sms:{{$storage.textTo}}?body={{message.message}}" class="tab-item calm">
       <i class="icon ion-android-textsms"></i>
       Text
     </a>
-    <a ng-click="editing = true" class="tab-item">
+    <a ng-click="editing = true" class="tab-item royal">
       <i class="icon ion-edit"></i>
       Edit
     </a>
   </div>
   <div ng-show="editing" class="item tabs tabs-secondary tabs-icon-left">
-    <a ng-click="deleteMessage($index)" class="tab-item">
+    <a ng-click="deleteMessage($index)" class="tab-item assertive">
       <i class="icon ion-trash-a"></i>
       Delete
     </a>
-    <a ng-click="editing = false" class="tab-item">
+    <a ng-click="editing = false" class="tab-item balanced">
       <i class="icon ion-checkmark"></i>
       Save
     </a>
