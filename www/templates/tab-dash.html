@@ -19,7 +19,7 @@
       <textarea ng-model="message.message" class="item-input"></textarea>
     </label>
   </div>
-  <div class="item tabs tabs-secondary tabs-icon-left">
+  <div ng-hide="editing" class="item tabs tabs-secondary tabs-icon-left">
     <a ng-href="mailto:{{$storage.emailTo}}?body={{message.message}}" class="tab-item">
       <i class="icon ion-email"></i>
       Email
@@ -28,11 +28,13 @@
       <i class="icon ion-android-textsms"></i>
       Text
     </a>
-    <a ng-hide="editing" ng-click="editing = true" class="tab-item">
+    <a ng-click="editing = true" class="tab-item">
       <i class="icon ion-edit"></i>
       Edit
     </a>
-    <a ng-show="editing" ng-click="editing = false" class="tab-item">
+  </div>
+  <div ng-show="editing" class="item tabs tabs-secondary tabs-icon-left">
+    <a ng-click="editing = false" class="tab-item">
       <i class="icon ion-checkmark"></i>
       Save
     </a>
