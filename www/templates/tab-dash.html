@@ -1,23 +1,23 @@
 <ion-view view-title="Dashboard">
-  <ion-content class="padding">
-  <div class="list">
-    <a ng-href="mailto:{{$storage.emailTo}}?body={{$storage.message}}" class="item item-icon-left">
+<ion-content class="padding">
+<div class="list card" ng-repeat="message in $storage.messages">
+  <div class="item item-body">
+    {{message.message}}
+  </div>
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a ng-href="mailto:{{$storage.emailTo}}?body={{message.message}}" class="tab-item">
       <i class="icon ion-email"></i>
-      Email Status Update
+      Email
     </a>
-    <a ng-href="sms:{{$storage.callTo}}?body={{$storage.message}}" class="item item-icon-left">
+    <a ng-href="sms:{{$storage.callTo}}?body={{message.message}}" class="tab-item">
       <i class="icon ion-android-textsms "></i>
-      Text Status Update
+      Text
     </a>
-    <a ng-href="tel:{{$storage.callTo}}" class="item item-icon-left">
+    <a ng-href="tel:{{$storage.callTo}}" class="tab-item">
       <i class="icon ion-ios-telephone"></i>
-      Phone Status Update
+      Phone
     </a>
   </div>
-  <div class="list">
-    <div ng-repeat="message in $storage.messages">
-      {{message.message}}
-    </div>
-  </div>
-  </ion-content>
+</div>
+</ion-content>
 </ion-view>
