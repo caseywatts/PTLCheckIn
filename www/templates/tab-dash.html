@@ -10,6 +10,18 @@
     New
   </a>
 </div>
+
+<div class="list card">
+  <div class="item item-button-right" ng-repeat="message in $storage.messages">
+      {{message.message}}
+      <div class="buttons">
+        <a ng-href="mailto:{{$storage.emailTo}}?body={{message.message}}" class="button button-positive ion-email"></a>
+        <a ng-href="sms:{{$storage.textTo}}?body={{message.message}}" class="button button-calm ion-android-textsms"></a>
+        <a ng-click="editing = true" class="button button-royal ion-edit"></a>
+      </div>
+  </div>
+</div>
+
 <div class="list card" ng-repeat="message in $storage.messages">
   <div class="item item-body" ng-hide="editing">
     {{message.message}}
