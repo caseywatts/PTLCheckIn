@@ -11,6 +11,8 @@
   </a>
 </div>
 
+
+<h3>View State</h3>
 <div class="list card">
   <div class="item item-button-right" ng-repeat="message in $storage.messages">
       {{message.message}}
@@ -22,34 +24,17 @@
   </div>
 </div>
 
-<div class="list card" ng-repeat="message in $storage.messages">
-  <div class="item item-body" ng-hide="editing">
-    {{message.message}}
-  </div>
-  <div class="item item-body" ng-show="editing">
-    <label class="item item-input">
+<h3>Editable State</h3>
+<p>This can go in a modal later?</p>
+<div class="list card">
+  <div class="item item-button-right" ng-repeat="message in $storage.messages">
       <textarea ng-model="message.message" class="item-input"></textarea>
-    </label>
-  </div>
-  <div ng-hide="editing" class="item tabs tabs-secondary tabs-icon-left">
-    <a ng-href="mailto:{{$storage.emailTo}}?body={{message.message}}" class="tab-item positive">
-      <i class="icon ion-email"></i>
-    </a>
-    <a ng-href="sms:{{$storage.textTo}}?body={{message.message}}" class="tab-item calm">
-      <i class="icon ion-android-textsms"></i>
-    </a>
-    <a ng-click="editing = true" class="tab-item royal">
-      <i class="icon ion-edit"></i>
-    </a>
-  </div>
-  <div ng-show="editing" class="item tabs tabs-secondary tabs-icon-left">
-    <a ng-click="deleteMessage($index)" class="tab-item assertive">
-      <i class="icon ion-trash-a"></i>
-    </a>
-    <a ng-click="editing = false" class="tab-item balanced">
-      <i class="icon ion-checkmark"></i>
-    </a>
+    <div class="buttons">
+      <a ng-click="deleteMessage($index)" class="button button-assertive ion-trash-a"></a>
+      <a ng-click="editing = false" class="button button-balanced ion-checkmark"></a>
+    </div>
   </div>
 </div>
+
 </ion-content>
 </ion-view>
