@@ -1,1 +1,6 @@
 /* Empty. Add your own CSS if you like */
+
+/* Patch for https://github.com/driftyco/ionic/issues/3432 */
+.item-button-right {
+  padding-right: 0px;
+}
