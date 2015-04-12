@@ -21,5 +21,11 @@
   </div>
 </div>
 
+<div class="list card">
+  <label class="item item-input" ng-repeat="message in $storage.messages">
+    <textarea ng-model="message.message"></textarea>
+  </label>
+</div>
+
 </ion-content>
 </ion-view>
