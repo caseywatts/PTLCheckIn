@@ -7,7 +7,7 @@ angular.module('starter.controllers', [])
       $scope.$storage.messages = CheckInMessages.all();
     }
   $scope.newMessage = function() {
-    $scope.$storage.messages.push({message: "Hello!", subject: "Subject"});
+    $scope.$storage.messages.unshift({message: "Hello!", subject: "Subject"});
   };
   $scope.listCanSwipe = true;
   $scope.reorderMessage = function(item, fromIndex, toIndex) {
