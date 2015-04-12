@@ -15,6 +15,12 @@ angular.module('starter.controllers', [])
     $scope.$storage.messages.splice(fromIndex, 1);
     $scope.$storage.messages.splice(toIndex, 0, item);
   };
+  $scope.toggleEditMode = function(){
+    $scope.inEditMode = !$scope.inEditMode;
+  };
+  $scope.toggleSortDeleteMode = function(){
+    $scope.inSortDeleteMode = !$scope.inSortDeleteMode;
+  };
 })
 
 .controller('AccountCtrl', function($scope, $localStorage) {

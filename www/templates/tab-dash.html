@@ -1,25 +1,30 @@
 <ion-view view-title="Dashboard">
-<ion-content class="padding">
-
-<div class="button-bar">
+<ion-nav-buttons side="secondary">
 <a ng-href="tel:{{$storage.callTo}}" class="button button-icon-left">
   <i class="icon ion-ios-telephone"></i>
   Phone
 </a>
+<button ng-click="toggleSortDeleteMode()" class="button ion-edit">
+  Sort/Delete
+</button>
+<a href ng-click="toggleEditMode()" class="button ion-edit">Edit</a>
+</ion-nav-buttons>
+
+<ion-content class="padding">
+
+<div class="button-bar">
 <a ng-click="newMessage()" class="button button-icon-left">
   <i class="icon ion-plus"></i>
   New
 </a>
-<a href ng-click="editing = !editing" class="button ion-edit">Toggle Editing</a>
-<a href ng-click="inEditMode = !inEditMode" class="button ion-edit">Reorder & Delete</a>
 </div>
 
 <ion-list ng-controller="DashCtrl"
-          ng-hide="editing"
-          show-delete="inEditMode"
-          show-reorder="inEditMode"
+          ng-hide="inEditMode"
+          show-delete="inSortDeleteMode"
+          show-reorder="inSortDeleteMode"
           can-swipe="listCanSwipe">
-  <ion-item ng-repeat="message in $storage.messages" class="item-button-right" on-tap="inEditMode = !inEditMode">
+  <ion-item ng-repeat="message in $storage.messages" class="item-button-right">
     {{message.subject}}
     <div class="buttons">
       <a ng-href="mailto:{{$storage.emailTo}}?subject={{message.subject}}&body={{message.message}}" class="button button-positive ion-email"></a>
@@ -34,7 +39,7 @@
   </ion-item>
 </ion-list>
 
-<div class="list card" ng-show="editing" ng-repeat="message in $storage.messages">
+<div class="list card" ng-show="inEditMode" ng-repeat="message in $storage.messages">
   <label class="item item-input item-stacked-label">
     <span class="input-label">Subject</span>
     <input type="text" ng-model="message.subject">
