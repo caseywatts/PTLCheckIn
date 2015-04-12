@@ -1,6 +1,7 @@
 <ion-view view-title="Dashboard">
 <ion-content class="padding">
 
+<div class="button-bar">
 <a ng-href="tel:{{$storage.callTo}}" class="button button-icon-left">
   <i class="icon ion-ios-telephone"></i>
   Phone
@@ -9,27 +10,27 @@
   <i class="icon ion-plus"></i>
   New
 </a>
-
-<a href ng-click="editing = !editing" class="button button-royal ion-edit">Toggle Editing</a>
-<button ng-click="inEditMode = !inEditMode" class="button">Reorder & Delete</button>
+<a href ng-click="editing = !editing" class="button ion-edit">Toggle Editing</a>
+<a href ng-click="inEditMode = !inEditMode" class="button ion-edit">Reorder & Delete</a>
+</div>
 
 <ion-list ng-controller="DashCtrl"
           ng-hide="editing"
           show-delete="inEditMode"
           show-reorder="inEditMode"
           can-swipe="listCanSwipe">
-  <ion-item ng-repeat="message in $storage.messages" class="item-button-right">
+  <ion-item ng-repeat="message in $storage.messages" class="item-button-right" on-tap="inEditMode = !inEditMode">
+    {{message.subject}}
+    <div class="buttons">
+      <a ng-href="mailto:{{$storage.emailTo}}?subject={{message.subject}}&body={{message.message}}" class="button button-positive ion-email"></a>
+      <a ng-href="sms:{{$storage.textTo}}?body={{message.message}}" class="button button-calm ion-android-textsms"></a>
+    </div>
     <ion-delete-button class="ion-minus-circled"
                        ng-click="$storage.messages.splice($index, 1)">
     </ion-delete-button>
     <ion-reorder-button class="ion-navicon"
                         on-reorder="reorderMessage(message, $fromIndex, $toIndex)">
     </ion-reorder-button>
-    {{message.subject}}
-    <div class="buttons">
-      <a ng-href="mailto:{{$storage.emailTo}}?subject={{message.subject}}&body={{message.message}}" class="button button-positive ion-email"></a>
-      <a ng-href="sms:{{$storage.textTo}}?body={{message.message}}" class="button button-calm ion-android-textsms"></a>
-    </div>
   </ion-item>
 </ion-list>
 
