@@ -1,6 +1,6 @@
 <ion-view view-title="Dashboard">
 <ion-content class="padding">
-<div class="button-bar">
+
   <a ng-href="tel:{{$storage.callTo}}" class="button button-icon-left">
     <i class="icon ion-ios-telephone"></i>
     Phone
@@ -9,10 +9,7 @@
     <i class="icon ion-plus"></i>
     New
   </a>
-</div>
 
-
-<h3>View State</h3>
 <div class="list card">
   <div class="item item-button-right" ng-repeat="message in $storage.messages">
       {{message.message}}
@@ -21,18 +18,6 @@
         <a ng-href="sms:{{$storage.textTo}}?body={{message.message}}" class="button button-calm ion-android-textsms"></a>
         <a ng-click="editing = true" class="button button-royal ion-edit"></a>
       </div>
-  </div>
-</div>
-
-<h3>Editable State</h3>
-<p>This can go in a modal later?</p>
-<div class="list card">
-  <div class="item item-button-right" ng-repeat="message in $storage.messages">
-      <textarea ng-model="message.message" class="item-input"></textarea>
-    <div class="buttons">
-      <a ng-click="deleteMessage($index)" class="button button-assertive ion-trash-a"></a>
-      <a ng-click="editing = false" class="button button-balanced ion-checkmark"></a>
-    </div>
   </div>
 </div>
 
