@@ -18,7 +18,7 @@ Toggle Editing
   <div class="item item-button-right" ng-repeat="message in $storage.messages">
     {{message.subject}}
     <div class="buttons">
-      <a ng-href="mailto:{{$storage.emailTo}}?body={{message.message}}" class="button button-positive ion-email"></a>
+      <a ng-href="mailto:{{$storage.emailTo}}?subject={{message.subject}}&body={{message.message}}" class="button button-positive ion-email"></a>
       <a ng-href="sms:{{$storage.textTo}}?body={{message.message}}" class="button button-calm ion-android-textsms"></a>
     </div>
   </div>
