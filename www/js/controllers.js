@@ -9,8 +9,11 @@ angular.module('starter.controllers', [])
   $scope.newMessage = function() {
     $scope.$storage.messages.push({message: "Hello!", subject: "Subject"});
   };
-  $scope.deleteMessage = function(index) {
-    $scope.$storage.messages.splice(index,1);
+  $scope.listCanSwipe = true;
+  $scope.reorderMessage = function(item, fromIndex, toIndex) {
+    //Move the item in the array
+    $scope.$storage.messages.splice(fromIndex, 1);
+    $scope.$storage.messages.splice(toIndex, 0, item);
   };
 })
 

@@ -35,5 +35,28 @@ Toggle Editing
   </label>
 </div>
 
+<button ng-click="inEditMode = !inEditMode" class="button">Edit</button>
+<ion-list ng-controller="DashCtrl"
+          show-delete="inEditMode"
+          show-reorder="inEditMode"
+          can-swipe="listCanSwipe">
+  <ion-item ng-repeat="message in $storage.messages">
+
+    <h2>{{message.title}}</h2>
+    <p>{{message.message}}</p>
+    <ion-option-button class="button-info"
+                       ng-click="edit(message)">
+      Edit
+    </ion-option-button>
+    <ion-delete-button class="ion-minus-circled"
+                       ng-click="$storage.messages.splice($index, 1)">
+    </ion-delete-button>
+    <ion-reorder-button class="ion-navicon"
+                        on-reorder="reorderMessage(message, $fromIndex, $toIndex)">
+    </ion-reorder-button>
+  </ion-item>
+</ion-list>
+
+
 </ion-content>
 </ion-view>
