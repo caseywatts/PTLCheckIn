@@ -7,7 +7,7 @@ angular.module('starter.controllers', [])
       $scope.$storage.messages = CheckInMessages.all();
     }
   $scope.newMessage = function() {
-    $scope.$storage.messages.push({message: "[text]"});
+    $scope.$storage.messages.push({message: "Hello!", subject: "Subject"});
   };
   $scope.deleteMessage = function(index) {
     $scope.$storage.messages.splice(index,1);
