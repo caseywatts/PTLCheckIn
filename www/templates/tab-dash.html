@@ -10,20 +10,28 @@
   New
 </a>
 
-<div class="list card">
+<a href ng-click="editing = !editing" class="button button-royal ion-edit">
+Toggle Editing
+</a>
+
+<div class="list card" ng-hide="editing">
   <div class="item item-button-right" ng-repeat="message in $storage.messages">
-    {{message.message}}
+    {{message.subject}}
     <div class="buttons">
       <a ng-href="mailto:{{$storage.emailTo}}?body={{message.message}}" class="button button-positive ion-email"></a>
       <a ng-href="sms:{{$storage.textTo}}?body={{message.message}}" class="button button-calm ion-android-textsms"></a>
-      <a ng-click="editing = true" class="button button-royal ion-edit"></a>
     </div>
   </div>
 </div>
 
-<div class="list card">
-  <label class="item item-input" ng-repeat="message in $storage.messages">
-    <textarea ng-model="message.message"></textarea>
+<div class="list card" ng-show="editing" ng-repeat="message in $storage.messages">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Subject</span>
+    <input type="text" ng-model="message.subject">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Message</span>
+    <textarea type="text" ng-model="message.message"></textarea>
   </label>
 </div>
 
